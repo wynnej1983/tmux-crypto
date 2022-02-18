@@ -76,6 +76,7 @@ crypto_commands=(
   "#($CURRENT_DIR/scripts/nano_gbp.sh)"
   "#($CURRENT_DIR/scripts/nano_nok.sh)"
   "#($CURRENT_DIR/scripts/nano_sek.sh)"
+  "#($CURRENT_DIR/scripts/iota_usd.sh)"
 )
 
 crypto_interpolation=(
@@ -151,6 +152,7 @@ crypto_interpolation=(
 	"\#{nano_gbp}"
 	"\#{nano_nok}"
 	"\#{nano_sek}"
+	"\#{iota_usd}"
 )
 
 set_tmux_options() {

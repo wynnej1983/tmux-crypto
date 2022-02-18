@@ -10,7 +10,7 @@ get_price()
     price=$(curl -s https://api.kraken.com/0/public/Ticker\?pair\=BTCUSD | jq '.result.XXBTZUSD.a[0]' | sed 's/\"//g')
 
     if [[ $api_status == 'online' ]]; then
-        echo "$price" | bc -l | awk '{printf "BTC: $%.2f", $1}'
+        echo "$price" | bc -l | awk '{printf "BTC $%.0f", $1}'
     elif [[ $api_status == 'offline' ]]; then
         echo "API offline"
     else
