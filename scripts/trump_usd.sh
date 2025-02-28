@@ -11,7 +11,7 @@ get_price() {
 
     if [[ $api_status == 'online' ]]; then
         if [[ -n "$price" && "$price" != "null" ]]; then
-            echo "$price" | bc -l | awk '{printf "TRUMP $%.2f", $1}'
+            echo "$price" | bc -l | awk '{printf "TRUMP %.2f", $1}'
         else
             echo "TRUMP/USD pair not found"
         fi

@@ -10,7 +10,7 @@ get_price()
     price=$(curl -s https://api-pub.bitfinex.com/v2/ticker/tIOTUSD | jq '.[6]')
 
     if [[ $api_status == 1 ]]; then
-        echo "$price" | bc -l | awk '{printf "IOTA $%.2f", $1}'
+        echo "$price" | bc -l | awk '{printf "IOTA %.2f", $1}'
     elif [[ $api_status == 0 ]]; then
         echo "IOTA -"
     else
