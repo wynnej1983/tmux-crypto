@@ -12,9 +12,9 @@ get_price()
     if [[ $api_status == 1 ]]; then
         echo "$price" | bc -l | awk '{printf "IOTA $%.2f", $1}'
     elif [[ $api_status == 0 ]]; then
-        echo "API offline"
+        echo "IOTA -"
     else
-        echo "Error, No internet"
+        echo "IOTA -"
     fi
 }
 

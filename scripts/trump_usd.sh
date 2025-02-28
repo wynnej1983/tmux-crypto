@@ -11,14 +11,14 @@ get_price() {
 
     if [[ $api_status == 'online' ]]; then
         if [[ -n "$price" && "$price" != "null" ]]; then
-            echo -e "$price" | bc -l | awk '{printf "TRUMP: %.2f$", $1}'
+            echo "$price" | bc -l | awk '{printf "TRUMP $%.2f", $1}'
         else
             echo "TRUMP/USD pair not found"
         fi
     elif [[ $api_status == 'offline' ]]; then
-        echo "API offline"
+        echo "TRUMP -"
     else
-        echo "Error, No internet"
+        echo "TRUMP -"
     fi
 }
 
